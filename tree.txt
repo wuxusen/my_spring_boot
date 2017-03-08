@@ -1,0 +1,138 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: windows
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.classifier: windows-x86_64
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building my_spring_boot_02 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.10:tree (default-cli) @ my_spring_boot_02 ---
+[INFO] com.wxs:my_spring_boot_02:jar:0.0.1-SNAPSHOT
+[INFO] +- org.springframework.boot:spring-boot-starter-web:jar:1.5.1.RELEASE:compile
+[INFO] |  +- org.springframework.boot:spring-boot-starter:jar:1.5.1.RELEASE:compile
+[INFO] |  |  +- org.springframework.boot:spring-boot:jar:1.5.1.RELEASE:compile
+[INFO] |  |  +- org.springframework.boot:spring-boot-autoconfigure:jar:1.5.1.RELEASE:compile
+[INFO] |  |  +- org.springframework.boot:spring-boot-starter-logging:jar:1.5.1.RELEASE:compile
+[INFO] |  |  |  +- ch.qos.logback:logback-classic:jar:1.1.9:compile
+[INFO] |  |  |  |  \- ch.qos.logback:logback-core:jar:1.1.9:compile
+[INFO] |  |  |  +- org.slf4j:jul-to-slf4j:jar:1.7.22:compile
+[INFO] |  |  |  \- org.slf4j:log4j-over-slf4j:jar:1.7.22:compile
+[INFO] |  |  \- org.yaml:snakeyaml:jar:1.17:runtime
+[INFO] |  +- org.springframework.boot:spring-boot-starter-tomcat:jar:1.5.1.RELEASE:compile
+[INFO] |  |  +- org.apache.tomcat.embed:tomcat-embed-core:jar:8.5.11:compile
+[INFO] |  |  +- org.apache.tomcat.embed:tomcat-embed-el:jar:8.5.11:compile
+[INFO] |  |  \- org.apache.tomcat.embed:tomcat-embed-websocket:jar:8.5.11:compile
+[INFO] |  +- org.hibernate:hibernate-validator:jar:5.3.4.Final:compile
+[INFO] |  |  +- javax.validation:validation-api:jar:1.1.0.Final:compile
+[INFO] |  |  +- org.jboss.logging:jboss-logging:jar:3.3.0.Final:compile
+[INFO] |  |  \- com.fasterxml:classmate:jar:1.3.3:compile
+[INFO] |  +- org.springframework:spring-web:jar:4.3.6.RELEASE:compile
+[INFO] |  |  +- org.springframework:spring-beans:jar:4.3.6.RELEASE:compile
+[INFO] |  |  \- org.springframework:spring-context:jar:4.3.6.RELEASE:compile
+[INFO] |  \- org.springframework:spring-webmvc:jar:4.3.6.RELEASE:compile
+[INFO] |     \- org.springframework:spring-expression:jar:4.3.6.RELEASE:compile
+[INFO] +- org.springframework.boot:spring-boot-starter-data-redis:jar:1.5.1.RELEASE:compile
+[INFO] |  +- org.springframework.data:spring-data-redis:jar:1.8.0.RELEASE:compile
+[INFO] |  |  +- org.springframework.data:spring-data-keyvalue:jar:1.2.0.RELEASE:compile
+[INFO] |  |  |  \- org.springframework.data:spring-data-commons:jar:1.13.0.RELEASE:compile
+[INFO] |  |  +- org.springframework:spring-tx:jar:4.3.6.RELEASE:compile
+[INFO] |  |  +- org.springframework:spring-oxm:jar:4.3.6.RELEASE:compile
+[INFO] |  |  +- org.springframework:spring-context-support:jar:4.3.6.RELEASE:compile
+[INFO] |  |  \- org.slf4j:jcl-over-slf4j:jar:1.7.22:compile
+[INFO] |  \- redis.clients:jedis:jar:2.9.0:compile
+[INFO] |     \- org.apache.commons:commons-pool2:jar:2.4.2:compile
+[INFO] +- org.springframework.boot:spring-boot-starter-jdbc:jar:1.5.1.RELEASE:compile
+[INFO] |  +- org.apache.tomcat:tomcat-jdbc:jar:8.5.11:compile
+[INFO] |  |  \- org.apache.tomcat:tomcat-juli:jar:8.5.11:compile
+[INFO] |  \- org.springframework:spring-jdbc:jar:4.3.6.RELEASE:compile
+[INFO] +- org.springframework.boot:spring-boot-starter-aop:jar:1.5.1.RELEASE:compile
+[INFO] |  +- org.springframework:spring-aop:jar:4.3.6.RELEASE:compile
+[INFO] |  \- org.aspectj:aspectjweaver:jar:1.8.9:compile
+[INFO] +- org.springframework.boot:spring-boot-starter-test:jar:1.5.1.RELEASE:test
+[INFO] |  +- org.springframework.boot:spring-boot-test:jar:1.5.1.RELEASE:test
+[INFO] |  +- org.springframework.boot:spring-boot-test-autoconfigure:jar:1.5.1.RELEASE:test
+[INFO] |  +- com.jayway.jsonpath:json-path:jar:2.2.0:test
+[INFO] |  |  \- net.minidev:json-smart:jar:2.2.1:test
+[INFO] |  |     \- net.minidev:accessors-smart:jar:1.1:test
+[INFO] |  |        \- org.ow2.asm:asm:jar:5.0.3:test
+[INFO] |  +- junit:junit:jar:4.12:test
+[INFO] |  +- org.assertj:assertj-core:jar:2.6.0:test
+[INFO] |  +- org.mockito:mockito-core:jar:1.10.19:test
+[INFO] |  |  \- org.objenesis:objenesis:jar:2.1:test
+[INFO] |  +- org.hamcrest:hamcrest-core:jar:1.3:test
+[INFO] |  +- org.hamcrest:hamcrest-library:jar:1.3:test
+[INFO] |  +- org.skyscreamer:jsonassert:jar:1.4.0:test
+[INFO] |  +- org.springframework:spring-core:jar:4.3.6.RELEASE:compile
+[INFO] |  \- org.springframework:spring-test:jar:4.3.6.RELEASE:test
+[INFO] +- org.projectlombok:lombok:jar:1.16.10:compile
+[INFO] +- io.grpc:grpc-all:jar:1.0.1:compile
+[INFO] |  +- io.grpc:grpc-auth:jar:1.0.1:compile
+[INFO] |  |  \- com.google.auth:google-auth-library-credentials:jar:0.4.0:compile
+[INFO] |  +- io.grpc:grpc-context:jar:1.0.1:compile
+[INFO] |  +- io.grpc:grpc-protobuf:jar:1.0.1:compile
+[INFO] |  |  +- com.google.guava:guava:jar:19.0:compile
+[INFO] |  |  +- com.google.protobuf:protobuf-java:jar:3.0.0:compile
+[INFO] |  |  \- com.google.protobuf:protobuf-java-util:jar:3.0.0:compile
+[INFO] |  |     \- com.google.code.gson:gson:jar:2.8.0:compile
+[INFO] |  +- io.grpc:grpc-netty:jar:1.0.1:compile
+[INFO] |  |  \- io.netty:netty-codec-http2:jar:4.1.3.Final:compile (version selected from constraint [4.1.3.Final,4.1.3.Final])
+[INFO] |  |     +- io.netty:netty-codec-http:jar:4.1.3.Final:compile
+[INFO] |  |     |  \- io.netty:netty-codec:jar:4.1.3.Final:compile
+[INFO] |  |     \- io.netty:netty-handler:jar:4.1.3.Final:compile
+[INFO] |  |        +- io.netty:netty-buffer:jar:4.1.3.Final:compile
+[INFO] |  |        |  \- io.netty:netty-common:jar:4.1.3.Final:compile
+[INFO] |  |        \- io.netty:netty-transport:jar:4.1.3.Final:compile
+[INFO] |  |           \- io.netty:netty-resolver:jar:4.1.3.Final:compile
+[INFO] |  +- io.grpc:grpc-stub:jar:1.0.1:compile
+[INFO] |  +- io.grpc:grpc-protobuf-nano:jar:1.0.1:compile
+[INFO] |  |  \- com.google.protobuf.nano:protobuf-javanano:jar:3.0.0-alpha-5:compile
+[INFO] |  +- io.grpc:grpc-core:jar:1.0.1:compile (version selected from constraint [1.0.1,1.0.1])
+[INFO] |  |  \- com.google.code.findbugs:jsr305:jar:3.0.0:compile
+[INFO] |  +- io.grpc:grpc-okhttp:jar:1.0.1:compile
+[INFO] |  |  +- com.squareup.okio:okio:jar:1.6.0:compile
+[INFO] |  |  \- com.squareup.okhttp:okhttp:jar:2.5.0:compile
+[INFO] |  \- io.grpc:grpc-protobuf-lite:jar:1.0.1:compile
+[INFO] |     \- com.google.protobuf:protobuf-lite:jar:3.0.1:compile
+[INFO] +- mysql:mysql-connector-java:jar:5.1.40:compile
+[INFO] +- com.fasterxml.jackson.core:jackson-core:jar:2.8.6:compile
+[INFO] +- com.fasterxml.jackson.core:jackson-databind:jar:2.8.6:compile
+[INFO] |  \- com.fasterxml.jackson.core:jackson-annotations:jar:2.8.0:compile
+[INFO] +- com.fasterxml.jackson.datatype:jackson-datatype-joda:jar:2.8.6:compile
+[INFO] |  \- joda-time:joda-time:jar:2.9.7:compile
+[INFO] +- com.fasterxml.jackson.module:jackson-module-parameter-names:jar:2.8.6:compile
+[INFO] +- com.alibaba:druid:jar:1.0.28:compile
+[INFO] |  +- com.alibaba:jconsole:jar:1.8.0:system
+[INFO] |  \- com.alibaba:tools:jar:1.8.0:system
+[INFO] +- org.mybatis.spring.boot:mybatis-spring-boot-starter:jar:1.2.0:compile
+[INFO] |  +- org.mybatis.spring.boot:mybatis-spring-boot-autoconfigure:jar:1.2.0:compile
+[INFO] |  +- org.mybatis:mybatis:jar:3.4.2:compile
+[INFO] |  \- org.mybatis:mybatis-spring:jar:1.3.1:compile
+[INFO] +- tk.mybatis:mapper-spring-boot-starter:jar:1.1.0:compile
+[INFO] |  +- tk.mybatis:mapper-spring-boot-autoconfigure:jar:1.0.0:compile
+[INFO] |  \- tk.mybatis:mapper:jar:3.3.9:compile
+[INFO] |     \- javax.persistence:persistence-api:jar:1.0:compile
+[INFO] +- com.github.pagehelper:pagehelper-spring-boot-starter:jar:1.1.0:compile
+[INFO] |  +- com.github.pagehelper:pagehelper-spring-boot-autoconfigure:jar:1.1.0:compile
+[INFO] |  \- com.github.pagehelper:pagehelper:jar:5.0.0:compile
+[INFO] |     \- com.github.jsqlparser:jsqlparser:jar:0.9.5:compile
+[INFO] +- org.springframework.boot:spring-boot-configuration-processor:jar:1.5.1.RELEASE:compile
+[INFO] |  \- com.vaadin.external.google:android-json:jar:0.0.20131108.vaadin1:compile
+[INFO] +- com.alibaba.rocketmq:rocketmq-client:jar:3.6.2.Final:compile
+[INFO] |  \- org.slf4j:slf4j-api:jar:1.7.22:compile
+[INFO] +- com.alibaba.rocketmq:rocketmq-common:jar:3.6.2.Final:compile
+[INFO] |  \- com.alibaba.rocketmq:rocketmq-remoting:jar:3.6.2.Final:compile
+[INFO] |     \- com.alibaba:fastjson:jar:1.2.12:compile
+[INFO] \- com.alibaba.rocketmq:rocketmq-srvutil:jar:3.2.6:compile
+[INFO]    +- commons-cli:commons-cli:jar:1.2:compile
+[INFO]    \- commons-io:commons-io:jar:2.4:compile
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 2.222 s
+[INFO] Finished at: 2017-03-07T14:49:09+08:00
+[INFO] Final Memory: 29M/434M
+[INFO] ------------------------------------------------------------------------
