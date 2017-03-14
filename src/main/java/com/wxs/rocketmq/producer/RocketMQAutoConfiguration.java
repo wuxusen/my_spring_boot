@@ -6,7 +6,7 @@ import com.alibaba.rocketmq.client.producer.DefaultMQProducer;
 import com.alibaba.rocketmq.common.consumer.ConsumeFromWhere;
 import com.wxs.rocketmq.consumer.MyMessageListenerConcurrently;
 import com.wxs.rocketmq.consumer.RockerMQConsumerProperties;
-import com.wxs.rocketmq.consumer.RocketMQConsumerService;
+import com.wxs.service.MqService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +15,8 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import javax.annotation.PostConstruct;
 
 /**
  * Created by wuxusen on 2017/3/6.
@@ -31,23 +33,25 @@ public class RocketMQAutoConfiguration {
     private RocketMQProperties rocketMQProperties;
     @Autowired
     private RockerMQConsumerProperties rockerMQConsumerProperties;
+    @Autowired
+    private MqService mqService;
+    @Autowired
+    private MyMessageListenerConcurrently myMessageListenerConcurrently;
 
 
-    @Bean
-    @ConditionalOnMissingBean(RocketMQConsumerService.class)
-    public RocketMQConsumerService intConsumer() throws MQClientException {
+    @PostConstruct
+    public void intConsumer1() throws MQClientException {
+
+        System.out.println("========================mqService : "+ mqService);
         DefaultMQPushConsumer consumer = new DefaultMQPushConsumer();
         consumer.setConsumerGroup(rockerMQConsumerProperties.getConsumerGroup());
         consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
         consumer.setNamesrvAddr(rockerMQConsumerProperties.getNamesrvAddr());
         consumer.subscribe("TopicTest", "*");
-        consumer.registerMessageListener(new MyMessageListenerConcurrently());
+        consumer.registerMessageListener(myMessageListenerConcurrently);
         consumer.start();
         System.out.println("Consumer Started ==============================================");
-        return new RocketMQConsumerService();
     }
-
-
 
     /**
      * 获得配置文件，启动producer

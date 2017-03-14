@@ -24,19 +24,43 @@
 
 package com.wxs.conf;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.springframework.web.servlet.view.JstlView;
 
 /**
- * @author liuzh
- * @since 2015-12-19 16:16
+ * wuxusen
+ * @date 2017年3月13日
+ *
  */
+@EnableWebMvc
+@EnableScheduling
 @Configuration
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
+
+   @Bean
+   public InternalResourceViewResolver viewResolver(){
+       InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+       viewResolver.setPrefix("/WEB-INF/jsp/");
+       viewResolver.setSuffix(".jsp");
+       viewResolver.setViewClass(JstlView.class);
+       return viewResolver;
+   }
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
+    }
+
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/sse").setViewName("/sse");
+        registry.addViewController("/async").setViewName("/async");
     }
 }

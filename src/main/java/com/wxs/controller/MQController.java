@@ -22,7 +22,7 @@ public class MQController {
 
         Message msg = new Message("TopicTest",// topic
                 "TagA",// tag
-                ("中文，会出现编码问题？").getBytes(RemotingHelper.DEFAULT_CHARSET)// body
+                ("name:li4,age:30,gender:1").getBytes(RemotingHelper.DEFAULT_CHARSET)// body
         );
         rocketMQService.asyncSendMsg(msg);
         return "make it !";

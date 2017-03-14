@@ -7,12 +7,14 @@ import com.alibaba.rocketmq.common.message.MessageExt;
 import com.wxs.model.Mqinfo;
 import com.wxs.service.MqService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
  * Created by Administrator on 2017/3/7.
  */
+@Service
 public class MyMessageListenerConcurrently implements MessageListenerConcurrently {
 
     @Autowired
@@ -21,18 +23,26 @@ public class MyMessageListenerConcurrently implements MessageListenerConcurrentl
     @Override
     public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> list, ConsumeConcurrentlyContext consumeConcurrentlyContext) {
         System.out.println(Thread.currentThread().getName() + " Receive New Messages: " + list);
-        for (MessageExt msg : list) {
-            String topic = msg.getTopic();
-            String tags = msg.getTags();
-            byte[] body = msg.getBody();
-            Mqinfo mqinfo = new Mqinfo();
-            mqinfo.setBody(new String(body));
-            mqinfo.setTopic(topic);
-            mqinfo.setTags(tags);
-            mqService.insertInfo(mqinfo);
+        System.out.println("==============================this is mqService : " + mqService);
+        System.out.println("==============================this is list : " + list.size());
+        try {
+            for (MessageExt msg : list) {
+                String topic = msg.getTopic();
+                String tags = msg.getTags();
+                byte[] body = msg.getBody();
+                Mqinfo mqinfo = new Mqinfo();
+                mqinfo.setBody(new String(body));
+                mqinfo.setTopic(topic);
+                mqinfo.setTags(tags);
+                mqService.insertInfo(mqinfo);
 
-            System.out.println("MQ -----------------topic:"+topic+" , tags:"+tags+" ,body:"+ new String(body));
+                System.out.println("MQ -----------------topic:"+topic+" , tags:"+tags+" ,body:"+ new String(body));
+            }
+            return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
         }
-        return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
+
     }
 }
