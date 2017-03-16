@@ -1,5 +1,7 @@
 package com.wxs;
 
+import com.wxs.model.SysUser;
+import com.wxs.service.SysUserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,17 @@ public class MySpringBoot02ApplicationTests {
 
 	@Autowired
 	private StringRedisTemplate stringRedisTemplate;
+
+	@Autowired
+	private SysUserService sysUserService;
+
+
+	@Test
+	public void getinfo(){
+		SysUser sysUser = sysUserService.getSysUserById("wxs");
+
+		System.out.println(sysUser.getRoles());
+	}
 
 
 	@Test

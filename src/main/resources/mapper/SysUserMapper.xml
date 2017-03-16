@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wxs.mapper.SysUserMapper">
+  <resultMap id="BaseResultMap" type="com.wxs.model.SysUser">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <collection property="roles" ofType="com.wxs.model.SysRole" >
+      <id column="s_id" property="id"/>
+      <result column="s_name" property="name"/>
+    </collection>
+  </resultMap>
+
+
+  <select id="getUserByName" parameterType="string" resultMap="BaseResultMap" >
+   SELECT u.id,u.password,u.username,s.id AS s_id,s.name AS s_name FROM sys_user_roles r
+                  LEFT JOIN sys_role s ON s.id = r.roles_id
+                  LEFT JOIN sys_user u ON u.id = r.sys_user_id
+                  WHERE u.username = #{0}
+  </select>
+
+</mapper>

@@ -33,7 +33,11 @@
             &lt;!&ndash;oracle 配置&ndash;&gt;
             &lt;!&ndash;<generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>&ndash;&gt;
         </table>-->
-        <table tableName="mqinfo" domainObjectName="Mqinfo" enableCountByExample="false" enableDeleteByExample="fasle"
+        <table tableName="sys_role" domainObjectName="SysRole" enableCountByExample="false" enableDeleteByExample="fasle"
+               enableSelectByExample="false" enableUpdateByExample="false" selectByExampleQueryId="fasle" />
+        <table tableName="sys_user" domainObjectName="SysUser" enableCountByExample="false" enableDeleteByExample="fasle"
+               enableSelectByExample="false" enableUpdateByExample="false" selectByExampleQueryId="fasle" />
+        <table tableName="sys_user_roles" domainObjectName="sysUserRoles" enableCountByExample="false" enableDeleteByExample="fasle"
                enableSelectByExample="false" enableUpdateByExample="false" selectByExampleQueryId="fasle" />
 
     </context>
