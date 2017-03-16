@@ -28,7 +28,6 @@ public class GenMain {
                             warnings);
                     myBatisGenerator.generate(null);
                 } catch (Exception e) {
-
                     e.printStackTrace();
                 }
 
