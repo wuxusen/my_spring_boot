@@ -22,7 +22,7 @@ public class MySpringBoot02ApplicationTests {
 
 	@Test
 	public void getinfo(){
-		SysUser sysUser = sysUserService.getSysUserById("wxs");
+		SysUser sysUser = sysUserService.getSysUserByName("wxs");
 
 		System.out.println(sysUser.getRoles());
 	}

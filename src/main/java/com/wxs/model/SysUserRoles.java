@@ -3,7 +3,7 @@ package com.wxs.model;
 import javax.persistence.*;
 
 @Table(name = "sys_user_roles")
-public class sysUserRoles {
+public class SysUserRoles {
     @Column(name = "sys_user_id")
     private Long sysUserId;
 

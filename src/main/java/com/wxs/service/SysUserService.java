@@ -18,13 +18,7 @@ public class SysUserService {
     @Autowired
     private SysRoleMapper sysRoleMapper;
 
-    public SysUser getSysUserById(String name){
-
-       /* SysUser sysUser = sysUserMapper.getSysUserByusername(name);
-
-        List<SysRole> sysRoles = sysRoleMapper.getSysRoleBySysUserID(sysUser.getId());
-
-        sysUser.setRoles(sysRoles);*/
+    public SysUser getSysUserByName(String name){
         SysUser sysUser = sysUserMapper.getUserByName("wxs");
         return  sysUser;
     }
