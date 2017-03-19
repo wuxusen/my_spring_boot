@@ -22,28 +22,6 @@ public class SysUser implements UserDetails{
     @Transient
     private List<SysRole> roles;
 
-    public List<SysRole> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(List<SysRole> roles) {
-        this.roles = roles;
-    }
-
-    /**
-     * @return id
-     */
-    public Long getId() {
-        return id;
-    }
-
-    /**
-     * @param id
-     */
-    public void setId(Long id) {
-        this.id = id;
-    }
-
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -55,51 +33,50 @@ public class SysUser implements UserDetails{
         return auths;
     }
 
-    /**
-     * @return password
-     */
-    public String getPassword() {
-        return password;
-    }
-
-    /**
-     * @param password
-     */
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    /**
-     * @return username
-     */
-    public String getUsername() {
-        return username;
-    }
-
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return true;
     }
 
-    /**
-     * @param username
-     */
+
+
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+    public String getUsername() {
+        return username;
+    }
     public void setUsername(String username) {
         this.username = username;
+    }
+    public String getPassword() {
+        return password;
+    }
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    public List<SysRole> getRoles() {
+        return roles;
+    }
+    public void setRoles(List<SysRole> roles) {
+        this.roles = roles;
     }
 }

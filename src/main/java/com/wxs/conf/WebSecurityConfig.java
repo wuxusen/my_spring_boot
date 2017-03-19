@@ -1,6 +1,7 @@
 package com.wxs.conf;
 
 import com.wxs.security.CustomUserService;
+import com.wxs.security.MyPasswordEncoder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
@@ -16,17 +17,20 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{//1
 	UserDetailsService customUserService(){ //2
 		return new CustomUserService();
 	}
-	
+
+	// 自定义验证，实现passwordEncoder接口。
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.userDetailsService(customUserService()); //3
+		auth.userDetailsService(customUserService()).passwordEncoder(new MyPasswordEncoder()); //3
 		
 	}
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-						.anyRequest().authenticated() //4
+				       .antMatchers("/static/**").permitAll() //设置不阻止的页面
+						.anyRequest()
+						.authenticated() //4
 						.and()
 						.formLogin()
 							.loginPage("/login")
@@ -34,8 +38,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{//1
 							.permitAll() //5
 						.and()
 						.logout().permitAll(); //6
-		
-
 	}
 
 
@@ -48,6 +50,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{//1
 		return new Md5PasswordEncoder();
 
 	}
+
 
 
 }

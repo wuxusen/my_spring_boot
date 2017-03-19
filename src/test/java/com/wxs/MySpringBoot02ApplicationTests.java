@@ -28,12 +28,13 @@ public class MySpringBoot02ApplicationTests {
 	}
 
 
+	/* redis 测试------
 	@Test
 	public void contextLoads() {
 		stringRedisTemplate.opsForValue().set("aaa", "111");
 		stringRedisTemplate.opsForHash().put("abc","sdf","sdf");
 		Object o = stringRedisTemplate.opsForHash().get("abc", "sdf");
 		System.out.println(o.toString());
-	}
+	}*/
 
 }

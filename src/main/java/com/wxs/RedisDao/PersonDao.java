@@ -1,7 +1,6 @@
 package com.wxs.RedisDao;
 
 import com.wxs.model.Person;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Repository;
@@ -17,10 +16,10 @@ public class PersonDao {
      *  在set 或 get 数据时，应使用同一个template
      */
 
-    @Autowired
+    //@Autowired
     private StringRedisTemplate stringRedisTemplate;
 
-    @Autowired
+    //@Autowired
     private RedisTemplate<Object, Object> redisTemplate;
 
     public void setRedis(){
