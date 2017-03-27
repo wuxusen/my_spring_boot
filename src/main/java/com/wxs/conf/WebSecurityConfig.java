@@ -27,17 +27,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{//1
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
+		http.csrf().disable();
 		http.authorizeRequests()
-				       .antMatchers("/static/**").permitAll() //设置不阻止的页面
+				       .antMatchers("/static/**","/druid/**","/favicon.ico").permitAll() //设置不阻止的页面
 						.anyRequest()
-						.authenticated() //4
+						.authenticated()
 						.and()
 						.formLogin()
 							.loginPage("/login")
 							.failureUrl("/login?error")
-							.permitAll() //5
+							.permitAll()
 						.and()
-						.logout().permitAll(); //6
+						.logout().permitAll();
 	}
 
 

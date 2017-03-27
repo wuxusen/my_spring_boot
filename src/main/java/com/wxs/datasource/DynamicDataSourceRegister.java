@@ -20,7 +20,7 @@ import java.util.Map;
  
 /**
  * 动态数据源注册;
- * @author Angel(QQ:412887952)
+ * @author
  * @version v.0.1
  */
 public class DynamicDataSourceRegister  implements ImportBeanDefinitionRegistrar, EnvironmentAware {
