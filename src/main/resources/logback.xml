@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+
+   <!-- <include resource="org/springframework/boot/logging/logback/base.xml" />-->
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="dailyRollingFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>/data/log/app.log</File>
+        <encoder>
+            <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg %n</Pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>rest-demo.%d{yyyy-MM-dd}.log</FileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <!--根据文件大小拆分-->
+       <!-- <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>10MB</MaxFileSize>
+        </triggeringPolicy>-->
+    </appender>
+
+    <!-- logback为java中的包 -->
+    <logger name="com.wxs" level="info"/>
+    <logger name="logging.level.com.wxs.mapper" level="DEBUG"/>
+    <logger name="logging.level.org.springframework.web" level="DEBUG"/>
+    <root level="info">
+        <appender-ref ref="dailyRollingFileAppender" />
+        <appender-ref ref="console" />
+    </root>
+
+</configuration>
