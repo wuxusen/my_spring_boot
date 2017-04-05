@@ -208,6 +208,9 @@
 						<version>1.2.5.RELEASE</version>
 					</dependency>
 				</dependencies>
+				<configuration>
+					<executable>true</executable>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.xolstice.maven.plugins</groupId>
