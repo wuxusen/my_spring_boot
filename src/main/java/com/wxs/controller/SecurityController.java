@@ -1,6 +1,8 @@
 package com.wxs.controller;
 
 import com.wxs.model.Msg;
+import com.wxs.propertiesConf.Person;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +16,10 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class SecurityController {
 
+    @Autowired
+    private Person person; // 因为 ConfigurationProperties 注解没有location属性，增加了替代方法
+
+
     @RequestMapping("/")
     public String index(Model model, HttpServletRequest request,String verification){
         HttpSession session = request.getSession();
@@ -21,7 +27,7 @@ public class SecurityController {
         model.addAttribute("msg", msg);
 
         System.out.println("-------------------verification" + verification);
-
+        System.out.println("person : "+ person.toString());
 
 
         return "home";

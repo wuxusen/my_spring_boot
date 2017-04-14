@@ -6,6 +6,7 @@
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+            <charset class="java.nio.charset.Charset" >utf-8</charset>
         </encoder>
     </appender>
 
@@ -13,6 +14,7 @@
         <File>/data/log/app.log</File>
         <encoder>
             <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg %n</Pattern>
+            <charset class="java.nio.charset.Charset" >utf-8</charset>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <FileNamePattern>rest-demo.%d{yyyy-MM-dd}.log</FileNamePattern>
