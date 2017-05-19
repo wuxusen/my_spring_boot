@@ -8,7 +8,6 @@ import org.objenesis.ObjenesisStd;
 import org.objenesis.instantiator.ObjectInstantiator;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
@@ -20,15 +19,6 @@ import java.util.Map;
 public class TestMain {
 
 
-
-
-    @Test
-    public void testDate(){
-        LocalDate date = LocalDate.of(2017,1,21); //2017-01-21
-
-
-
-    }
 
     @Test
     public void testmo(){
