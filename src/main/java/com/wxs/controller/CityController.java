@@ -27,6 +27,8 @@ package com.wxs.controller;
 import com.github.pagehelper.PageInfo;
 import com.wxs.model.City;
 import com.wxs.service.CityService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -35,13 +37,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-
 import java.util.List;
 
 /**
  * @author liuzh
  * @since 2015-12-19 11:10
  */
+@Api(value = "测试类",tags = "测试接口")
 @RestController
 @RequestMapping("/cities")
 public class CityController {
@@ -49,6 +51,7 @@ public class CityController {
     @Autowired
     private CityService cityService;
 
+    @ApiOperation("测试读写分离")
     @RequestMapping
     public PageInfo<City> getAll(City city) {
         List<City> countryList = cityService.getAll(city);

@@ -1,10 +1,10 @@
-[INFO] Scanning for projects...
+﻿[INFO] Scanning for projects...
 [INFO] ------------------------------------------------------------------------
 [INFO] Detecting the operating system and CPU architecture
 [INFO] ------------------------------------------------------------------------
 [INFO] os.detected.name: windows
 [INFO] os.detected.arch: x86_64
-[INFO] os.detected.classifier: windows-x86_64
+[INFO] os.detected.classifier: windows-x86sdf_64
 [INFO]                                                                         
 [INFO] ------------------------------------------------------------------------
 [INFO] Building my_spring_boot_02 0.0.1-SNAPSHOT

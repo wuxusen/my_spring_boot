@@ -29,7 +29,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{//1
 	protected void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable();
 		http.authorizeRequests()
-				       .antMatchers("/static/**","/druid/**","/favicon.ico").permitAll() //设置不阻止的页面
+				       .antMatchers("/static/**","/druid/**","/favicon.*","/swagger-ui.html","/webjars/*").permitAll() //设置不阻止的页面
 						.anyRequest()
 						.authenticated()
 						.and()
