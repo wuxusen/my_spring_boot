@@ -9,7 +9,7 @@
 [INFO] ------------------------------------------------------------------------
 [INFO] Building my_spring_boot_02 0.0.1-SNAPSHOT
 [INFO] ------------------------------------------------------------------------
-[INFO] 
+[INFO] ----------------- 
 [INFO] --- maven-dependency-plugin:2.10:tree (default-cli) @ my_spring_boot_02 ---
 [INFO] com.wxs:my_spring_boot_02:jar:0.0.1-SNAPSHOT
 [INFO] +- org.springframework.boot:spring-boot-starter-web:jar:1.5.1.RELEASE:compile
